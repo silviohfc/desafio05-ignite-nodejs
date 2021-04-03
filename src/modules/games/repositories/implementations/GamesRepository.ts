@@ -16,7 +16,6 @@ export class GamesRepository implements IGamesRepository {
     return this.repository
       .createQueryBuilder('games')
       .where('lower(games.title) LIKE lower(:param)', { param: `%${param}%` })
-      .groupBy('games.id')
       .getMany()
       // Complete usando query builder
   }
